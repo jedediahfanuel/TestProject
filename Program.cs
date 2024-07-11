@@ -24,3 +24,10 @@ int roll3 = dice.Next(50,101);
 Console.WriteLine($"First roll: {roll1}");
 Console.WriteLine($"First roll: {roll2}");
 Console.WriteLine($"First roll: {roll3}");
+
+
+int firstValue = 500;
+int secondValue = 600;
+int largerValue = System.Math.Max(firstValue, secondValue);
+
+Console.WriteLine(largerValue);
