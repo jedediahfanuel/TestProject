@@ -23,7 +23,7 @@ if (total >= 15)
 {
 	Console.WriteLine("You win!");
 }
-else (total < 15)
+else
 {
 	Console.WriteLine("Sorry, you lose.");
 }
