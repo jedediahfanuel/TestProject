@@ -28,3 +28,6 @@ fraudulentOrderIds[0] = "F000";
 
 Console.WriteLine($"Reassign First: {fraudulentOrderIds[0]}");
 
+Console.WriteLine("");
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent order to process.");
