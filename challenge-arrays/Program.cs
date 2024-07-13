@@ -9,4 +9,10 @@
     "B179"
 };
 
-
+foreach (string OID in fraudOIDs)
+{
+	if (OID.StartsWith("B"))
+	{
+		Console.WriteLine(OID);
+	}
+}
