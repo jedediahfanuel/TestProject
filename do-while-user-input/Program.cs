@@ -56,3 +56,33 @@ do
     Console.WriteLine($"Your input value ({inputStr}) has been accepted.");
         
 } while (!isValid);
+
+// ----------------------------------------------------------
+// ----------------------------------------------------------
+// ----------------------------------------------------------
+// CODE PROJECT 2 - write code that validates string input
+
+string? inpStr= "";
+string[] roles = {"administrator", "manager", "user"};
+
+Console.WriteLine("Enter you role name (Administrator, Manager, or User)");
+
+do
+{
+    inpStr = Console.ReadLine();
+    if (inpStr == null) continue;
+
+    inpStr = inpStr.Trim().ToLower();
+
+    string role = Array.Find(roles, r => inpStr == r);
+
+    if (role == null)
+    {
+        Console.WriteLine($"The role name that you entered, \"{inpStr}\" is not valid.");
+        continue;
+    }
+
+    Console.WriteLine($"Your input value ({role}) has been accepted.");
+    break;
+} while(true);
+
