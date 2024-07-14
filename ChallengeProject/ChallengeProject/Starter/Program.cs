@@ -59,7 +59,6 @@ foreach (string name in studentNames)
     else if (currentStudent == "Logan")
         studentScores = loganScores;
 
-    int sumAssignmentScores = 0;
     int sumExamScore= 0;
     int sumExtraCredit = 0;
 
@@ -81,20 +80,18 @@ foreach (string name in studentNames)
 
         if (gradedAssignments <= examAssignments)
         {       
-            sumAssignmentScores += score;
             sumExamScore += score;
         }
         else
         {
             extraCreditAssignments++;
-            sumAssignmentScores += score / 10;
             sumExtraCredit += score;
         }
     }
 
-    currentStudentOverall = (decimal)(sumAssignmentScores) / examAssignments;
     currentStudentExamScore = (decimal)(sumExamScore) / examAssignments;
     currentStudentExtraCredit = (sumExtraCredit) / extraCreditAssignments;
+    currentStudentOverall = (sumExamScore + ((decimal)sumExtraCredit / 10)) / examAssignments;
 
     if (currentStudentOverall >= 97)
         currentStudentGrade = "A+";
