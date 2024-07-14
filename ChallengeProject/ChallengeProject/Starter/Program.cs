@@ -92,6 +92,7 @@ foreach (string name in studentNames)
     currentStudentExamScore = (decimal)(sumExamScore) / examAssignments;
     currentStudentExtraCredit = (sumExtraCredit) / extraCreditAssignments;
     currentStudentOverall = (sumExamScore + ((decimal)sumExtraCredit / 10)) / examAssignments;
+    currentStudentPTS = (decimal)sumExtraCredit / 10 / examAssignments;
 
     if (currentStudentOverall >= 97)
         currentStudentGrade = "A+";
