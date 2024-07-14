@@ -22,3 +22,6 @@ if (flagx)
     Console.WriteLine(flagx);
 
 
+// Oneliner if
+bool dlag = true;
+if (dlag) Console.WriteLine(dlag);
