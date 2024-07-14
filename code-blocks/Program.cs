@@ -8,3 +8,17 @@ if (flag)
 
 value = 10;
 Console.WriteLine($"Outside the code block: {value}");
+
+
+// Simplify Code Blocks
+bool flagz = true;
+if (flagz)
+{
+    Console.WriteLine(flagz);
+}
+
+bool flagx = true;
+if (flagx)
+    Console.WriteLine(flagx);
+
+
