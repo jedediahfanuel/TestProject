@@ -29,7 +29,7 @@ int[] loganScores = new int[] { 90, 95, 87, 88, 96, 96 };
 
 int[] studentScores = new int[10];
 
-string currentStudentLetterGrade = "";
+string currentStudentGrade = "";
 
 // display the header row for scores/grades
 Console.Clear();
@@ -61,7 +61,10 @@ foreach (string name in studentNames)
 
     int sumAssignmentScores = 0;
 
-    decimal currentStudentGrade = 0;
+    decimal currentStudentOverall = 0;
+    decimal currentStudentExamScore = 0;
+    int currentStudentExtraCredit = 0;
+    decimal currentStudentPTS = 0;
 
     int gradedAssignments = 0;
 
@@ -80,51 +83,52 @@ foreach (string name in studentNames)
             sumAssignmentScores += score / 10;
     }
 
-    currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
+    currentStudentOverall = (decimal)(sumAssignmentScores) / examAssignments;
 
-    if (currentStudentGrade >= 97)
-        currentStudentLetterGrade = "A+";
+    if (currentStudentOverall >= 97)
+        currentStudentGrade = "A+";
 
-    else if (currentStudentGrade >= 93)
-        currentStudentLetterGrade = "A";
+    else if (currentStudentOverall >= 93)
+        currentStudentGrade = "A";
 
-    else if (currentStudentGrade >= 90)
-        currentStudentLetterGrade = "A-";
+    else if (currentStudentOverall >= 90)
+        currentStudentGrade = "A-";
 
-    else if (currentStudentGrade >= 87)
-        currentStudentLetterGrade = "B+";
+    else if (currentStudentOverall >= 87)
+        currentStudentGrade = "B+";
 
-    else if (currentStudentGrade >= 83)
-        currentStudentLetterGrade = "B";
+    else if (currentStudentOverall >= 83)
+        currentStudentGrade = "B";
 
-    else if (currentStudentGrade >= 80)
-        currentStudentLetterGrade = "B-";
+    else if (currentStudentOverall >= 80)
+        currentStudentGrade = "B-";
 
-    else if (currentStudentGrade >= 77)
-        currentStudentLetterGrade = "C+";
+    else if (currentStudentOverall >= 77)
+        currentStudentGrade = "C+";
 
-    else if (currentStudentGrade >= 73)
-        currentStudentLetterGrade = "C";
+    else if (currentStudentOverall >= 73)
+        currentStudentGrade = "C";
 
-    else if (currentStudentGrade >= 70)
-        currentStudentLetterGrade = "C-";
+    else if (currentStudentOverall >= 70)
+        currentStudentGrade = "C-";
 
-    else if (currentStudentGrade >= 67)
-        currentStudentLetterGrade = "D+";
+    else if (currentStudentOverall >= 67)
+        currentStudentGrade = "D+";
 
-    else if (currentStudentGrade >= 63)
-        currentStudentLetterGrade = "D";
+    else if (currentStudentOverall >= 63)
+        currentStudentGrade = "D";
 
-    else if (currentStudentGrade >= 60)
-        currentStudentLetterGrade = "D-";
+    else if (currentStudentOverall >= 60)
+        currentStudentGrade = "D-";
 
     else
-        currentStudentLetterGrade = "F";
+        currentStudentGrade = "F";
 
     // Student         Grade
     // Sophia:         92.2    A-
     
-    Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+    Console.Write($"{currentStudent}\t\t{currentStudentExamScore}\t{currentStudentOverall}\t{currentStudentGrade}\t\t");
+    Console.WriteLine($"{currentStudentExtraCredit} ({currentStudentPTS} pts)");
 }
 
 // required for running in VS Code (keeps the Output windows open to view results)
