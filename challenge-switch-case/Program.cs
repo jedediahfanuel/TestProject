@@ -4,48 +4,83 @@ string sku = "01-MN-L";
 
 string[] product = sku.Split('-');
 
-string type = "";
-string color = "";
-string size = "";
+string type = (product[0]) switch
+{
+	("01") => "Sweat shirt",
+	("02") => "Sweat shirt",
+	("03") => "Sweat shirt",
+	_ => "Other"
+};
 
-if (product[0] == "01")
+string color = (product[1]) switch
 {
-    type = "Sweat shirt";
-} else if (product[0] == "02")
-{
-    type = "T-Shirt";
-} else if (product[0] == "03")
-{
-    type = "Sweat pants";
-}
-else
-{
-    type = "Other";
-}
+	("BL") => "Black",
+	("MN") => "Maroon",
+	_ => "White"
+};
 
-if (product[1] == "BL")
+string size = (product[2]) switch
 {
-    color = "Black";
-} else if (product[1] == "MN")
-{
-    color = "Maroon";
-} else
-{
-    color = "White";
-}
-
-if (product[2] == "S")
-{
-    size = "Small";
-} else if (product[2] == "M")
-{
-    size = "Medium";
-} else if (product[2] == "L")
-{
-    size = "Large";
-} else
-{
-    size = "One Size Fits All";
-}
+	("S") => "Small",
+	("M") => "Medium",
+	("L") => "Large",
+	_ => "One Size Fits All"
+};
 
 Console.WriteLine($"Product: {size} {color} {type}");
+
+// // SKU = Stock Keeping Unit
+// string sku = "01-MN-L";
+
+// string[] product = sku.Split('-');
+
+// string type = "";
+// string color = "";
+// string size = "";
+
+// switch (product[0])
+// {
+//     case "01":
+//         type = "Sweat shirt";
+//         break;
+//     case "02":
+//         type = "T-Shirt";
+//         break;
+//     case "03":
+//         type = "Sweat pants";
+//         break;
+//     default:
+//         type = "Other";
+//         break;
+// }
+
+// switch (product[1])
+// {
+//     case "BL":
+//         color = "Black";
+//         break;
+//     case "MN":
+//         color = "Maroon";
+//         break;
+//     default:
+//         color = "White";
+//         break;
+// }
+
+// switch (product[2])
+// {
+//     case "S":
+//         size = "Small";
+//         break;
+//     case "M":
+//         size = "Medium";
+//         break;
+//     case "L":
+//         size = "Large";
+//         break;
+//     default:
+//         size = "One Size Fits All";
+//         break;
+// }
+
+// Console.WriteLine($"Product: {size} {color} {type}");
