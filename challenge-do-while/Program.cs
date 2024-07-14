@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Random rand = new Random();
+int hero = 10;
+int mons = 10;
+bool swt = false;
+int damage = 0;
+
+do
+{
+	swt = !swt;
+	damage = rand.Next(1,10);
+	switch (swt)
+	{
+		case true:
+			mons -= damage;
+			Console.WriteLine($"Monster was damaged and lost {damage} health and now has {mons} health.");
+			break;
+		case false:
+			hero -= damage;
+			Console.WriteLine($"Hero was damaged and lost {damage} health and now has {hero} health.");
+			break;
+	}
+} while (hero > 0 && mons > 0);
+
+Console.WriteLine(swt ? "Hero wins!" : "Monster wins!");
