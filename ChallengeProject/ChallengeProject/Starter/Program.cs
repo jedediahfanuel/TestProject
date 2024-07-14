@@ -127,7 +127,7 @@ foreach (string name in studentNames)
     // Student         Grade
     // Sophia:         92.2    A-
     
-    Console.Write($"{currentStudent}\t\t{currentStudentExamScore}\t{currentStudentOverall}\t{currentStudentGrade}\t\t");
+    Console.Write($"{currentStudent}\t\t{currentStudentExamScore}\t\t{currentStudentOverall}\t{currentStudentGrade}\t");
     Console.WriteLine($"{currentStudentExtraCredit} ({currentStudentPTS} pts)");
 }
 
