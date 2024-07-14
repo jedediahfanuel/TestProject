@@ -1,5 +1,7 @@
 ﻿string? readResult;
 bool validEntry = false;
+
+// capture user input in a string variable named readResult
 Console.WriteLine("Enter a string containing at least three characters:");
 do
 {
@@ -16,3 +18,9 @@ do
         }
     }
 } while (validEntry == false);
+
+int numericValue = 0;
+bool validNumber = false;
+
+validNumber = int.TryParse(readResult, out numericValue);
+
