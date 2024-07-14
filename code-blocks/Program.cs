@@ -25,3 +25,14 @@ if (flagx)
 // Oneliner if
 bool dlag = true;
 if (dlag) Console.WriteLine(dlag);
+
+
+// Keeps the code readibily
+string name = "steve";
+
+if (name == "bob")
+    Console.WriteLine("Found Bob");
+else if (name == "steve") 
+    Console.WriteLine("Found Steve");
+else
+    Console.WriteLine("Found Chuck");
