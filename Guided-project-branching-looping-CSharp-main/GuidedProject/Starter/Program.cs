@@ -85,16 +85,19 @@ Console.WriteLine(" 6. Edit an animal’s personality description");
 Console.WriteLine(" 7. Display all cats with a specified characteristic");
 Console.WriteLine(" 8. Display all dogs with a specified characteristic");
 Console.WriteLine();
-Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
 
-readResult = Console.ReadLine();
-if (readResult != null)
+do
 {
-    menuSelection = readResult.ToLower();
-}
+    Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
+    readResult = Console.ReadLine();
+    if (readResult != null)
+    {
+        menuSelection = readResult.ToLower();
+    }
 
-Console.WriteLine($"You selected menu option {menuSelection}.");
-Console.WriteLine("Press the Enter key to continue");
+    Console.WriteLine($"You selected menu option {menuSelection}.");
+    Console.WriteLine("Press the Enter key to continue");
 
-// pause code execution
-readResult = Console.ReadLine();
+    // pause code execution
+    readResult = Console.ReadLine();
+} while(menuSelection != "exit");
