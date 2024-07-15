@@ -142,10 +142,28 @@ do
                     {
                         readResult = Console.ReadLine();
                         if (readResult != null)
-                        {
                             anotherPet = readResult.ToLower();
-                        }
 
+                        bool validEntry = false;
+
+                        // get species (cat or dog) - string animalSpecies is a required field 
+                        do
+                        {
+                            Console.WriteLine("\n\rEnter 'dog' or 'cat' to begin a new entry");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                animalSpecies = readResult.ToLower();
+                                if (animalSpecies != "dog" && animalSpecies != "cat")
+                                {
+                                    validEntry = false;
+                                }
+                                else
+                                {
+                                    validEntry = true;
+                                }
+                            }
+                        } while (validEntry == false);
                     } while (anotherPet != "y" && anotherPet != "n");
                 }
             }
