@@ -130,8 +130,33 @@ do
             if (petCount < maxPets)
                 Console.WriteLine($"We currently have {petCount} pets that need homes. We can manage {(maxPets - petCount)} more.");
 
-            Console.WriteLine("Press the Enter key to continue.");
-            readResult = Console.ReadLine();
+            while (anotherPet == "y" && petCount < maxPets)
+            {
+                petCount++;
+                
+                if (petCount < maxPets)
+                {
+                    Console.WriteLine("Do you want to enter info for another pet (y/n)");
+
+                    do
+                    {
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            anotherPet = readResult.ToLower();
+                        }
+
+                    } while (anotherPet != "y" && anotherPet != "n");
+                }
+            }
+
+            if (petCount >= maxPets)
+            {
+                Console.WriteLine("We have reached our limit on the number of pets that we can manage.");
+                Console.WriteLine("Press the Enter key to continue.");
+                readResult = Console.ReadLine();
+            }
+
             break;
         case "3":
             // Ensure animal ages and physical descriptions are complete
