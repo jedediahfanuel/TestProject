@@ -29,3 +29,7 @@ string asecond = "7";
 int sum = int.Parse(afirst) + int.Parse(asecond);
 Console.WriteLine(sum);
 
+string value1 = "5";
+string value2 = "7";
+int hresult = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(hresult);
