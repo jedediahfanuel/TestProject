@@ -287,7 +287,39 @@ do
 
         case "3":
             // Ensure animal ages and physical descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i,0] != "ID #: " && ourAnimals[i,2] == "Age: ?")
+                {
+                    do
+                    {
+                        Console.WriteLine($"Enter an age for ID#: {ourAnimals[i,0]}");
+                        readResult = Console.ReadLine().Trim();
+
+                        if (readResult == null || !int.TryParse(readResult, out petAge)) continue;
+
+                        Console.WriteLine("masuk");
+                        break;
+                    } while(true);
+                    ourAnimals[i, 2] = "Age: " + readResult.Trim();
+                }
+
+                if (ourAnimals[i,0] != "ID #: " && ourAnimals[i,4] == "Physical description: ")
+                {
+                    do
+                    {
+                        Console.WriteLine($"Enter a physical description of ID #: {ourAnimals[i,0]} (size, color, gender, weight, housebroken)");
+                        readResult = Console.ReadLine();
+
+                        if (readResult == null || readResult.Trim() == "") continue;
+
+                        Console.WriteLine("dua");
+                        break;
+                    } while(true);
+                    ourAnimals[i, 4] = "Physical description: " + readResult.Trim();
+                }
+            }
+            Console.WriteLine("Age and physical description fields are complete for all of our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
