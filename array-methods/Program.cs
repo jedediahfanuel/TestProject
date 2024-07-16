@@ -92,3 +92,20 @@ for (int i = 0; i < message.Length; i++)
 //Step 4
 string r = String.Join(" ", newMessage);
 Console.WriteLine(r);
+
+
+
+Console.WriteLine("\n");
+// CHALLENG 2 : SORT ORDER
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+string[] oRay = orderStream.Split(',');
+Array.Sort(oRay);
+foreach (string oid in oRay)
+{
+    if (oid.Length == 4)
+    {
+        Console.WriteLine(oid);
+        continue;
+    }
+    Console.WriteLine($"{oid}\t- Error");
+}
