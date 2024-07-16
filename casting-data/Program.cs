@@ -74,3 +74,19 @@ foreach (var valuelc in valuelcs)
 
 Console.WriteLine($"msg: {msg}");
 Console.WriteLine($"ttl: {ttl}");
+
+// CHALLENGE 2
+int vlc1 = 11;
+decimal vlc2 = 6.2m;
+float vlc3 = 4.3f;
+
+// The Convert class is best for converting the fractional decimal numbers into whole integer numbers
+// Convert.ToInt32() rounds up the way you would expect.
+int rsl1 = Convert.ToInt32(vlc1 / vlc2);
+Console.WriteLine($"Divide vlc1 by vlc2, display the rsl as an int: {rsl1}");
+
+decimal rsl2 = vlc2 / (decimal)vlc3;
+Console.WriteLine($"Divide vlc2 by vlc3, display the rsl as a decimal: {rsl2}");
+
+float rsl3 = vlc3 / vlc1;
+Console.WriteLine($"Divide vlc3 by vlc1, display the rsl as a float: {rsl3}");
