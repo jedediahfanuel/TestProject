@@ -27,14 +27,24 @@ foreach (var paallet in paallets)
 }
 
 Console.WriteLine("");
-Array.Resize(ref pallets, 6);
-Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+Array.Resize(ref paallets, 6);
+Console.WriteLine($"Resizing 6 ... count: {paallets.Length}");
 
-pallets[4] = "C01";
-pallets[5] = "C02";
+paallets[4] = "C01";
+paallets[5] = "C02";
 
-foreach (var pallet in pallets)
+foreach (var paallet in paallets)
 {
-    Console.WriteLine($"-- {pallet}");
+    Console.WriteLine($"-- {paallet}");
 }
+
+Console.WriteLine("");
+Array.Resize(ref paallets, 3);
+Console.WriteLine($"Resizing 3 ... count: {paallets.Length}");
+
+foreach (var paallet in paallets)
+{
+    Console.WriteLine($"-- {paallet}");
+}
+
 
