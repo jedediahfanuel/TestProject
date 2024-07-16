@@ -56,3 +56,19 @@ Array.Reverse(valueArray);
 // string result = new string(valueArray);
 string result = String.Join(",", valueArray);
 Console.WriteLine(result);
+
+Console.WriteLine("\n Split()");
+string[] items = result.Split(',');
+foreach (string item in items)
+{
+    Console.WriteLine(item);
+}
+
+
+Console.WriteLine("\n");
+
+// CHALLENGE 1 : PANGRAM
+string pangram = "The quick brown fox jumps over the lazy dog";
+char[] charay = pangram.ToCharArray();
+Array.Reverse(charay);
+Console.WriteLine(String.Join("", charay));
