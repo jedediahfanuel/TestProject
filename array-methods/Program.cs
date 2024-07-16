@@ -68,7 +68,27 @@ foreach (string item in items)
 Console.WriteLine("\n");
 
 // CHALLENGE 1 : PANGRAM
-string pangram = "The quick brown fox jumps over the lazy dog";
-char[] charay = pangram.ToCharArray();
+string pang = "The quick brown fox jumps over the lazy dog";
+char[] charay = pang.ToCharArray();
 Array.Reverse(charay);
 Console.WriteLine(String.Join("", charay));
+
+string pangram = "The quick brown fox jumps over the lazy dog";
+
+// Step 1
+string[] message = pangram.Split(' ');
+
+//Step 2
+string[] newMessage = new string[message.Length];
+
+// Step 3
+for (int i = 0; i < message.Length; i++)
+{
+    char[] letters = message[i].ToCharArray();
+    Array.Reverse(letters);
+    newMessage[i] = new string(letters);
+}
+
+//Step 4
+string r = String.Join(" ", newMessage);
+Console.WriteLine(r);
