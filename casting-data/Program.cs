@@ -52,3 +52,25 @@ else
    Console.WriteLine("Unable to report the measurement.");
 }
 Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+
+// CHALLANGE COMBINE STRING & NUMERIC VALUES
+string[] valuelcs = { "12.3", "45", "ABC", "11", "DEF" };
+
+decimal ttl = 0m;
+string msg = "";
+
+foreach (var valuelc in valuelcs)
+{
+    decimal nbr; // stores the TryParse "out" valuelc
+    if (decimal.TryParse(valuelc, out nbr))
+    {
+        ttl += nbr;
+    } else
+    {
+        msg += valuelc;
+    }
+}
+
+Console.WriteLine($"msg: {msg}");
+Console.WriteLine($"ttl: {ttl}");
