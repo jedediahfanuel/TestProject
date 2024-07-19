@@ -11,3 +11,10 @@ string scnd = "World";
 Console.WriteLine($"{frst} {scnd}!");
 Console.WriteLine($"{scnd} {frst}!");
 Console.WriteLine($"{frst} {frst} {frst}!");
+
+
+// Formatting Currency
+decimal price = 123.45m;
+int discount = 50;
+Console.WriteLine($"Price: {price:C} (Save {discount:C})");
+
