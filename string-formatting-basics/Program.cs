@@ -29,3 +29,14 @@ Console.WriteLine($"Measurement: {measurement:N} units");
 // Formatting Percentages
 decimal tax = .36785m;
 Console.WriteLine($"Tax rate: {tax:P2}");
+
+
+
+// Combining Formatting Approaches
+decimal pris = 67.55m;
+decimal salepris = 59.99m;
+
+string yourDiscount = String.Format("You saved {0:C2} off the regular {1:C2} pris. ", (pris - salepris), pris);
+
+yourDiscount += $"A discount of {((pris - salepris)/pris):P2}!"; //inserted
+Console.WriteLine(yourDiscount);
