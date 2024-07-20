@@ -1,4 +1,6 @@
-﻿// #1 the ourAnimals array will store the following: 
+﻿// using System;
+
+// #1 the ourAnimals array will store the following: 
 string animalSpecies = "";
 string animalID = "";
 string animalAge = "";
@@ -40,7 +42,7 @@ for (int i = 0; i < maxPets; i++)
             animalNickname = "gus";
             suggestedDonation = "49.99";
             break;
-        
+
         case 2:
             animalSpecies = "cat";
             animalID = "c3";
@@ -54,13 +56,14 @@ for (int i = 0; i < maxPets; i++)
         case 3:
             animalSpecies = "cat";
             animalID = "c4";
-            animalAge = "3";
-            animalPhysicalDescription = "Medium sized, long hair, yellow, female, about 10 pounds. Uses litter box.";
-            animalPersonalityDescription = "A people loving cat that likes to sit on your lap.";
-            animalNickname = "Lion";
+            animalAge = "";
+            animalPhysicalDescription = "";
+            animalPersonalityDescription = "";
+            animalNickname = "lion";
             suggestedDonation = "";
+
             break;
-        
+
         default:
             animalSpecies = "";
             animalID = "";
@@ -79,7 +82,7 @@ for (int i = 0; i < maxPets; i++)
     ourAnimals[i, 3] = "Nickname: " + animalNickname;
     ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
     ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
-
+    
     if (!decimal.TryParse(suggestedDonation, out decimalDonation)){
         decimalDonation = 45.00m; // if suggestedDonation NOT a number, default to 45.00
     }
@@ -116,7 +119,7 @@ do
                     Console.WriteLine();
                     for (int j = 0; j < 7; j++)
                     {
-                        Console.WriteLine(ourAnimals[i, j]);
+                        Console.WriteLine(ourAnimals[i, j].ToString());
                     }
                 }
             }
@@ -126,10 +129,57 @@ do
             break;
 
         case "2":
-            // Display all dogs with a specified characteristic
-            Console.WriteLine("\nUNDER CONSTRUCTION - please check back next month to see progress.");
-            Console.WriteLine("Press the Enter key to continue.");
+            // Display all dogs with a specified characteristic");
+
+            string dogCharacteristic = "";
+
+            while (dogCharacteristic == "")
+            {
+                // have the user enter physical characteristics to search for
+                Console.WriteLine($"\nEnter one desired dog characteristics to search for");
+                readResult = Console.ReadLine();
+                if (readResult != null)
+                {
+                    dogCharacteristic = readResult.ToLower().Trim();
+                }
+            }
+
+            bool noMatchesDog = true;
+            string dogDescription = "";
+
+            // #6 loop through the ourAnimals array to search for matching animals
+            for (int i = 0; i < maxPets; i++)
+            {
+                bool dogMatch = true;
+
+                if (ourAnimals[i, 1].Contains("dog"))
+                {
+                    
+                    if (dogMatch == true)
+                    {
+                        // #7 Search combined descriptions and report results
+                        dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+                        
+
+                        if (dogDescription.Contains(dogCharacteristic))
+                        {
+                            Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a match!");
+                            Console.WriteLine(dogDescription);
+
+                            noMatchesDog = false;
+                        }
+                    }
+                }
+            }
+
+            if (noMatchesDog)
+            {
+                Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristic);
+            }
+
+            Console.WriteLine("\n\rPress the Enter key to continue");
             readResult = Console.ReadLine();
+
             break;
 
         default:
