@@ -83,3 +83,31 @@ string input = "there are snakes at the zoo";
 
 Console.WriteLine(input);
 Console.WriteLine(ReverseSentence(input));
+
+
+// BOOLEAN FUNCTION
+string[] warr = {"racecar" ,"talented", "deified", "tent", "tenet"};
+
+Console.WriteLine("Is it a palindrome?");
+foreach (string wrd in warr) 
+{
+    Console.WriteLine($"{wrd}: {IsPalindrome(wrd)}");
+}
+
+bool IsPalindrome(string word) 
+{
+    int start = 0;
+    int end = word.Length - 1;
+
+    while (start < end) 
+    {
+        if (word[start] != word[end]) 
+        {
+            return false;
+        }
+        start++;
+        end--;
+    }
+
+    return true;
+}
