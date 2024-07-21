@@ -138,14 +138,22 @@ int[,] TwoCoins(int[] coins, int target)
     return (count == 0) ? new int[0,0] : result;
 }
 
-int target = 60;
+int target = 30;
 int[] coins = new int[] {5, 5, 50, 25, 25, 10, 5};
-int[] rs = TwoCoins(coins, target);
-if (rs.Length == 0) 
+int[,] result = TwoCoins(coins, target);
+if (result.Length == 0) 
 {
     Console.WriteLine("No two coins make change");
 } 
 else 
 {
-    Console.WriteLine($"Change found at positions {rs[0]} and {rs[1]}");
+    Console.WriteLine("Change found at positions:");
+    for (int i = 0; i < result.GetLength(0); i++) 
+    {
+        if (result[i,0] == -1) 
+        {
+            break;
+        }
+        Console.WriteLine($"{result[i,0]},{result[i,1]}");
+    }
 }
