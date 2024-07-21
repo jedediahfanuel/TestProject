@@ -15,10 +15,10 @@ string externalDomain = "hayworth.com";
 
 for (int i = 0; i < corporate.GetLength(0); i++) 
 {
-    // display internal email addresses
+    Console.WriteLine($"{corporate[i,0].Substring(0,2).ToLower()}{corporate[i,1].ToLower()}@contoso.com");
 }
 
 for (int i = 0; i < external.GetLength(0); i++) 
 {
-    // display external email addresses
+    Console.WriteLine($"{external[i,0].Substring(0,2).ToLower()}{external[i,1].ToLower()}@{externalDomain}");
 }
