@@ -24,3 +24,22 @@ void PrintArray()
 // Use concise naming
 void ShowData(string a, int b, int c){};
 void DisplayDate(string month, int day, int year){};
+
+
+Console.WriteLine("\n\n")
+
+// EXERCISE 1 - Create Method that Displaying Random Number
+Console.WriteLine("Generating random numbers:");
+DisplayRandomNumbers();
+
+void DisplayRandomNumbers() 
+{
+    Random random = new Random();
+
+    for (int i = 0; i < 5; i++) 
+    {
+        Console.Write($"{random.Next(1, 100)} ");
+    }
+
+    Console.WriteLine();
+}
