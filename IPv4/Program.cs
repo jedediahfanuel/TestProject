@@ -32,17 +32,20 @@ void ValidateZeroes()
 	validZeroes = true;
 }
 
-void ValidateRange()
+void ValidateRange() 
 {
-	foreach (string number in ipv4Input)
-	{
-		if (int.Parse(number) < 1 || int.Parse(number) > 255)
-		{
-			validRange = false;
-			return;
-		}
-	}
-	validRange = true;
+    string[] address = ipv4Input.Split(".", StringSplitOptions.RemoveEmptyEntries);
+
+    foreach (string number in address) 
+    {
+        int value = int.Parse(number);
+        if (value < 0 || value > 255) 
+        {
+            validRange = false;
+            return;
+        }
+    }
+    validRange = true;
 }
 
 if (ValidateLength() && ValidateZeroes() && ValidateRange()) 
