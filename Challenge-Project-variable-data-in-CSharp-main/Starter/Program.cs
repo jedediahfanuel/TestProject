@@ -150,7 +150,7 @@ do
             string dogDescription = "";
             
             // #4 update to "rotating" animation with countdown
-            string[] searchingIcons = {"\\", "|", "/", "--"};
+            string[] searchingIcons = {" \\ ", " | ", " / ", "---"};
 
             // loop ourAnimals array to search for matching animals
             for (int i = 0; i < maxPets; i++)
@@ -181,9 +181,9 @@ do
                         if (dogDescription.Contains(character.Trim()))
                         {
                             // #3b update message to reflect term 
-                            // #3c set a flag "this dog" is a match
-                            Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a {character.Trim()} match!");
+                            Console.WriteLine($"Our dog {ourAnimals[i, 3]} is a {character.Trim()} match!");
 
+                            // #3c set a flag "this dog" is a match
                             noMatchesDog = false;
                         }
                     }
@@ -191,11 +191,8 @@ do
                     // #3d if "this dog" is match write match message + dog description
                     if (!noMatchesDog)
                     {
-                        Console.WriteLine();
                         Console.WriteLine($"{ourAnimals[i, 3].ToString()} ({ourAnimals[i, 0].ToString()})");
-                        Console.WriteLine(ourAnimals[i, 4].ToString());
-                        Console.WriteLine(ourAnimals[i, 5].ToString());
-                        Console.WriteLine();
+                        Console.WriteLine(dogDescription);
                     }
                 }
             }
