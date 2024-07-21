@@ -111,3 +111,33 @@ bool IsPalindrome(string word)
 
     return true;
 }
+
+
+// ARRAY FUNCTION
+int[] TwoCoins(int[] coins, int target) 
+{
+    for (int curr = 0; curr < coins.Length; curr++) 
+    {
+        for (int next = curr + 1; next < coins.Length; next++) 
+        {
+            if (coins[curr] + coins[next] == target) 
+            {
+                return new int[]{curr, next};
+            }
+
+        }
+    }
+    return  new int[0];
+}
+
+int target = 60;
+int[] coins = new int[] {5, 5, 50, 25, 25, 10, 5};
+int[] rs = TwoCoins(coins, target);
+if (rs.Length == 0) 
+{
+    Console.WriteLine("No two coins make change");
+} 
+else 
+{
+    Console.WriteLine($"Change found at positions {rs[0]} and {rs[1]}");
+}
