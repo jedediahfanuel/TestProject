@@ -91,7 +91,7 @@ void Move()
 		case ConsoleKey.RightArrow: 
             playerX++; 
             break;
-		case ConsoleKey.Escape:     
+		default:     
             shouldExit = true; 
             break;
     }
