@@ -28,6 +28,14 @@ InitializeGame();
 while (!shouldExit) 
 {
     Move();
+
+    if (EatFood())
+    {
+        FreezePlayer();
+        ShowFood();
+        ChangePlayer();
+    }
+
     if (TerminalResized())
     {
         shouldExit = true;
@@ -39,6 +47,11 @@ while (!shouldExit)
 bool TerminalResized() 
 {
     return height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5;
+}
+
+bool EatFood()
+{
+    return playerX == foodX && playerY == foodY;
 }
 
 // Displays random food at a random location
