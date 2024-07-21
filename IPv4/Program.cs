@@ -9,3 +9,15 @@ then ipAddress is valid
 
 else ipAddress is invalid
 */
+void ValidateLength() {}
+void ValidateZeroes() {}
+void ValidateRange() {}
+
+if (ValidateLength() && ValidateZeroes() && ValidateRange()) 
+{
+    Console.WriteLine($"ip is a valid IPv4 address");
+} 
+else 
+{
+    Console.WriteLine($"ip is an invalid IPv4 address");
+}
