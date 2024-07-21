@@ -1,4 +1,6 @@
-﻿SayHello();
+﻿Console.WriteLine("Before calling a method");
+SayHello();
+Console.WriteLine("After calling a method");
 
 void SayHello() 
 {
@@ -18,3 +20,7 @@ void PrintArray()
     }
     Console.WriteLine();
 }
+
+// Use concise naming
+void ShowData(string a, int b, int c){};
+void DisplayDate(string month, int day, int year){};
