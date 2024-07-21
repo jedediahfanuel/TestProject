@@ -9,33 +9,51 @@ then ipAddress is valid
 
 else ipAddress is invalid
 */
-string ipv4Input = "107.31.1.5";
+string[] ipv4Input = {"107.31.1.5", "255.0.0.255", "555..0.555", "255...255"};
+string[] address;
 bool validLength = false;
 bool validZeroes = false;
 bool validRange = false;
 
-void ValidateLength()
+foreach (string ip in ipv4Input) 
 {
-	validLength = ipv4Input.Split(".").Length == 4
+    address = ip.Split(".", StringSplitOptions.RemoveEmptyEntries);
+
+    ValidateLength(); 
+    ValidateZeroes(); 
+    ValidateRange();
+
+    if (validLength && validZeroes && validRange) 
+    {
+        Console.WriteLine($"{ip} is a valid IPv4 address");
+    } 
+    else 
+    {
+        Console.WriteLine($"{ip} is an invalid IPv4 address");
+    }
 }
 
-void ValidateZeroes()
+void ValidateLength() 
 {
-	foreach (string number in ipv4Input)
-	{
-		if (number.Length > 1 && number.StartsWith("0"))
-		{
-			validZeroes = false;
-			return;
-		}
-	}
-	validZeroes = true;
+    validLength = address.Length == 4;
+};
+
+void ValidateZeroes() 
+{
+    foreach (string number in address) 
+    {
+        if (number.Length > 1 && number.StartsWith("0")) 
+        {
+            validZeroes = false;
+            return;
+        }
+    }
+
+    validZeroes = true;
 }
 
 void ValidateRange() 
 {
-    string[] address = ipv4Input.Split(".", StringSplitOptions.RemoveEmptyEntries);
-
     foreach (string number in address) 
     {
         int value = int.Parse(number);
@@ -46,13 +64,4 @@ void ValidateRange()
         }
     }
     validRange = true;
-}
-
-if (ValidateLength() && ValidateZeroes() && ValidateRange()) 
-{
-    Console.WriteLine($"ip is a valid IPv4 address");
-} 
-else 
-{
-    Console.WriteLine($"ip is an invalid IPv4 address");
 }
