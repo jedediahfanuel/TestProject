@@ -3,6 +3,18 @@ This code uses a names array and corresponding methods to display
 greeting messages
 */
 
+bool exit = false;
+var rand = new Random();
+int num1 = 5;
+int num2 = 5;
+
+do
+{
+    num1 = rand.Next(1, 11);
+    num2 = num1 + rand.Next(1, 51);
+
+} while (exit == false);
+
 string[] names = new string[] { "Sophia", "Andrew", "AllGreetings" };
 
 string messageText = "";
@@ -19,7 +31,7 @@ foreach (string name in names)
     Console.WriteLine(messageText + "\n\r");
 }
 
-bool pauseHmm = false;
+bool pauseHmm = ;
 while (pauseHmm == true);
 
 static string SophiaMessage()
